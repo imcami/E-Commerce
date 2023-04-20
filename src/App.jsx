@@ -1,0 +1,32 @@
+import React from 'react';
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import CartProvider from './components/CartContext/CartContext';
+import Checkout from './components/checkout/Checkout'
+import ItemListContainer from './components/itemList/ItemListContainer';
+import ItemDetailContainer from './components/itemDetail/ItemDetailContainer'
+import Error404 from './components/Error/Error404';
+import Cart from './components/Cart/Cart';
+
+function App() {
+  
+
+  return (
+   <div className='app'>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<ItemListContainer greeting="Bienvenidos a Rave!"/>} />
+          <Route exact path="idCategory" element={<ItemListContainer greeting="Bienvenidos a Rave!"/>} />
+          <Route exact path="/detail/Product:Id" element={<ItemDetailContainer greeting="Bienvenidos a Rave!"/>} />
+          <Route exact path="/cart" element={<Cart/>} />
+          <Route exact path="/cart" element={<Checkout/>} />
+          <Route exact path='*' element={<Error404/>} />
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
+  </div>
+  )
+}
+
+export default App
