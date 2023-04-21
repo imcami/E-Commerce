@@ -18,10 +18,10 @@ function App() {
     <BrowserRouter>
     <div className='app'>
        <NavBar/>
-        <Routes>
+        <Routes>  
           <Route exact path="/" element={<ItemListContainer greeting="Bienvenidos a Rave!"/>} />
           <Route exact path="idCategory" element={<ItemListContainer greeting="Bienvenidos a Rave!"/>} />
-          <Route exact path="/detail/product:Id" element={<ItemDetailContainer greeting="Bienvenidos a Rave!"/>} />
+          <Route exact path="/detail/:productId" element={<ItemDetailContainer greeting="Bienvenidos a Rave!"/>} />
           <Route exact path="/cart" element={<Cart/>} />
           <Route exact path="/cart" element={<Checkout/>} />
           <Route exact path='*' element={<Error404/>} />
