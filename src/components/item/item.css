@@ -1,13 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Crimson Text', serif;
+    font-family: 'Poppins', sans-serif;
+  }
 .pack{
  display: block;
  width: 300px;
+ text-decoration: none;
+ color:black;
 }
 
 
 .pack img{
     margin: 20px;
     padding: 10px;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
 }
