@@ -10,8 +10,6 @@ import Cart from './components/Cart/Cart';
 import NavBar from './components/navbar/NavBar';
 
 function App() {
-  
-
   return (
    
     <CartProvider>
@@ -20,8 +18,8 @@ function App() {
        <NavBar/>
         <Routes>  
           <Route exact path="/" element={<ItemListContainer greeting="Bienvenidos a Rave!"/>} />
-          <Route exact path="idCategory" element={<ItemListContainer greeting="Bienvenidos a Rave!"/>} />
-          <Route exact path="/detail/:productId" element={<ItemDetailContainer greeting="Bienvenidos a Rave!"/>} />
+          <Route exact path="/idCategory" element={<ItemListContainer greeting="Bienvenidos a Rave!"/>} />
+          <Route exact path="/idProduct" element={<ItemDetailContainer greeting="Bienvenidos a Rave!"/>} />
           <Route exact path="/cart" element={<Cart/>} />
           <Route exact path="/cart" element={<Checkout/>} />
           <Route exact path='*' element={<Error404/>} />

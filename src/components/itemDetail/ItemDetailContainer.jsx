@@ -6,7 +6,7 @@ import LoaderSecondary from '../Loader/LoaderSEcondary';
 
 function ItemDetailContainer() {
 
-    const {idProduct} = useParams()
+    const { idProduct } = useParams()
     const [loading, setLoading] = useState(true)
     const [product, setProduct] = useState([])
     
@@ -20,12 +20,12 @@ function ItemDetailContainer() {
 
     return (
         <div>
-            {loading
+            {/* loading
             ?
-                <LoaderSecondary />
-            :
-                <ItemDetail product={product}/>
-            }
+                // <LoaderSecondary />
+            // : */}
+{                <ItemDetail product={product}/>}
+            
         </div>
     )
 }

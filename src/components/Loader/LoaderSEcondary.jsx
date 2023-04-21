@@ -1,5 +1,3 @@
-
-
 import MoonLoader from 'react-spinners/MoonLoader'
 
 const LoaderSecondary = () => {
