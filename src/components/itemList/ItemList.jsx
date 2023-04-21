@@ -1,7 +1,6 @@
 import Item from '../item/Item'
-
-
-const ItemList = ({info}) =>{
+import React from 'react'
+const ItemList = ({data}) =>{
     return(
         <div>
             {data.map(products => <Item key={products.id} info={products} /> )}
@@ -9,4 +8,4 @@ const ItemList = ({info}) =>{
     )
 }
 
-export default ItemList;
+export default ItemList

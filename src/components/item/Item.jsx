@@ -2,13 +2,10 @@ import React from 'react'
 import './Item.css';
 import { Link } from 'react-router-dom';
 
-
-
 //El parametro es capturado desde ItemList
-
 const Item = ({info}) => {
     return(
-        <Link to={`detail/${id}`} className="pack">
+        <Link to={`detail/${info.id}`} className="pack">
              <img src={info.img} alt='' />
              <p>{info.title} </p>
              <p>{info.description} </p>
@@ -17,4 +14,4 @@ const Item = ({info}) => {
     )
 }
 
-export default Item;
+export default Item

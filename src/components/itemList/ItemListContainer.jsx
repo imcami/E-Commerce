@@ -1,36 +1,33 @@
-
- 
-
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
-import ItemList from '../ItemList/ItemList'
+import ItemList from './ItemList'
 import Loader from '../Loader/MainLoader'
-
+import {db} from '../../firebase/Firebase'
 function ItemListContainer({greeting}) {
 
     const [products, setProducts] = useState([])
     const { idCategory } = useParams()
 
     useEffect(() => {
-        const db = getFirestore();
+        
         if (idCategory) {
-            const queryCollectionCategory = query(collection(db, 'items'), where('category', '==', idCategory) )
+            const queryCollectionCategory = query(collection(db, 'products'), where('category', '==', idCategory) )
             getDocs(queryCollectionCategory)
             .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data()}))))
-            .finally(() => setLoading(false))
+           
         } else {
-            const queryCollection = collection(db, 'items')
+            const queryCollection = collection(db, 'products')
             getDocs(queryCollection)
             .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data()}))))
-            .finally(() => setLoading(false))
+           
         }  
     }, [idCategory])
-
+console.log(products)
     return (
         
         <div>
-			{!products.length ? <p className="">Cargando...</p> : <ItemList products={products} />}
+			{!products.length ? <p className="">Cargando...</p> : <ItemList data={products} />}
 		</div>
     
            
