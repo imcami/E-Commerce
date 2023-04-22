@@ -5,7 +5,7 @@ import ItemCount from '../itemCount/ItemCount';
 import './ItemDetail.css'
 function ItemDetail ({product}) {
     const [goCart, setGoCart] = useState(false)
-    const [addProduct] = CartContext()
+    const { addToCart } = CartContext()
    
     const onAdd = (quantity) =>{
         setGoCart(true)
