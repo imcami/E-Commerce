@@ -36,7 +36,7 @@ const CartList = () => {
                             <h5>${info.quantity * info.price}</h5>
                         </div>
                         <div className="col-lg-1 col-sm-1">
-                            <button className="btn btn-danger bg-gradient" onClick={() => removeItem(prod.id)}>Eliminar</button>
+                            <button className="btn btn-danger bg-gradient" onClick={() => removeItem(info.id)}>Eliminar</button>
                         </div>
                         <hr></hr>
                     </div>

@@ -24,7 +24,7 @@ function ItemDetailContainer() {
             ?
                 <LoaderSecondary />
             :
-                <ItemDetail product={product}/>
+                <ItemDetail info={product}/>
             }
         </div>
     )

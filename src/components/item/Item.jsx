@@ -9,10 +9,9 @@ const Item = ({info}) => {
 
   
     return(
-    <CardGroup>
-
-     <Card style={{ width: '18rem', display: 'flex', padding:'2px' }}>
-          <img src={info.img} alt="" />
+    <CardGroup className=''>
+     <Card style={{ display:'flex', padding:'2px' }}>
+          < img className='card-img-top' src={info.img} alt="" />
       <Card.Body>
         <Card.Title>{info.title} </Card.Title>
         <Card.Text>
@@ -20,13 +19,13 @@ const Item = ({info}) => {
         ${info.price}
         </Card.Text>
         <Link to={`/checkout`}>
-                        <button className="btn btn-danger bg-gradient">Comprar</button>
+                        <button className="btn btn-warning  bg-gradient">Añadir al carrito 🛒 </button>
                     </Link>
       
       </Card.Body>
     </Card>
-       
-       </CardGroup>
+    </CardGroup >
+    
     )
 }
 

@@ -7,6 +7,7 @@ import {db} from '../../firebase/Firebase'
 function ItemListContainer({greeting}) {
 
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(false)
     const { idCategory } = useParams()
 
     useEffect(() => {
@@ -23,14 +24,23 @@ function ItemListContainer({greeting}) {
            
         }  
     }, [idCategory])
-console.log(products)
+
+
+
     return (
-        
         <div>
-			{!products.length ? <p className="">Cargando...</p> : <ItemList data={products} />}
-		</div>
-    
-           
+        <h2 className="text-center"> {greeting} </h2>
+        <div className="container">
+            <div className="row">
+                { loading 
+                ? 
+                    <Loader />
+                :
+                !products.length ? <p className="">Cargando...</p> : <ItemList data={products} />
+                }
+            </div>
+        </div>
+    </div>          
        
     )
 }

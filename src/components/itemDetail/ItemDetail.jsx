@@ -16,12 +16,12 @@ function ItemDetail ({product}) {
         <div key={product.id} className='container mt-5'>
            <div className="row justify-content-center text-center align-items-center">
            <div className="col-lg-6 col-md-12 col-sm-12 pb-5">  
-                    <img src={product.img} className="itemDetail-img"></img>
+                    <img src={info.img} className="itemDetail-img"></img>
                 </div>
                 <div className="col-lg-6 col-md-12 col-sm-12">
-                    <h3 className="fw-bold">{product.title}</h3>
-                    <h4>${product.price}</h4>
-                    <p>{product.description}</p>
+                    <h3 className="fw-bold">{info.title}</h3>
+                    <h4>${info.price}</h4>
+                    <p>{info.description}</p>
          
            {
               !goCart ?  <ItemCount stock={30} initial={1} onAdd={onAdd}/>
