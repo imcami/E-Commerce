@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from '../CartContext/CartContext';
 import ItemCount from '../itemCount/ItemCount';
 import './ItemDetail.css'
 function ItemDetail ({product}) {
     const [goCart, setGoCart] = useState(false)
-    const { addToCart } = usecontext(CartContext)
+    const { addToCart } = useContext(CartContext)
    
     const onAdd = (quantity) =>{
         setGoCart(true)
@@ -24,7 +24,7 @@ function ItemDetail ({product}) {
                     <p>{product.description}</p>
          
            {
-              !goCart ?  <ItemCount stock={30} initial={1} onAdd={onAdd}/>
+              !goCart ?  <ItemCount stock={30} initial={1} addToCart={addToCart}/>
               : 
               <div className="d-flex justify-content-center">
                   <Link to={`/cart`}> 

@@ -2,7 +2,7 @@ import { useState, useContext } from 'react'
 import { getFirestore, collection, writeBatch, addDoc, Timestamp, doc} from 'firebase/firestore'
 import { CartContext } from '../CartContext/CartContext'
 import { Link } from 'react-router-dom'
-import LoaderSecondary from '../Loader/LoaderSEcondary'
+import MainLoader from '../Loader/MainLoader'
 
 const CheckOut = () => {
 
@@ -77,7 +77,7 @@ const CheckOut = () => {
             ?
                 <>      
                     <h4 className="mt-5 text-center">Procesando su orden, espere un momento...</h4>
-                    <LoaderSecondary />
+                    <MainLoader />
                 </>
             :
             orderId

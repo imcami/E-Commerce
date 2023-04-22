@@ -14,14 +14,14 @@ function ItemListContainer({greeting}) {
         
         if (idCategory) {
             const queryCollectionCategory = query(collection(db, 'products'), where('category', '==', idCategory) )
-            getDocs(queryCollectionCategory)
+            getDocs(queryCollectionCategory) 
             .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data()}))))
-           
+            .finally(() => setLoading(false))
         } else {
             const queryCollection = collection(db, 'products')
             getDocs(queryCollection)
             .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data()}))))
-           
+            .finally(() => setLoading(false))
         }  
     }, [idCategory])
 

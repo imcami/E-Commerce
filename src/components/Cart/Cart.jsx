@@ -1,12 +1,12 @@
 import React, {useContext} from 'react'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext/CartContext'
-import CartList from '../CartList/CartList'
 import { FaShoppingCart } from 'react-icons/fa';
+import CartList from '../cartList/CartList';
 
 function Cart() {
 
-    const { cartList } = useContext (CartContext)
+    const { cartList } = useContext(CartContext)
 
     return (
         <>
