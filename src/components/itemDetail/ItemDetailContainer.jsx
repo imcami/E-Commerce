@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom' 
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import LoaderSecondary from '../Loader/LoaderSEcondary';
+import { MainLoader } from '../Loader/MainLoader';
 
 function ItemDetailContainer() {
 
@@ -22,7 +22,7 @@ function ItemDetailContainer() {
         <div>
              {loading
             ?
-                <LoaderSecondary />
+                <MainLoader />
             :
                 <ItemDetail info={product}/>
             }
