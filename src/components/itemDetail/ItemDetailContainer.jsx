@@ -12,20 +12,20 @@ function ItemDetailContainer() {
     
     useEffect(() => {
         const db = getFirestore()
-        const queryDb = doc(db, 'items', idProduct )
+        const queryDb = doc(db, 'products', idProduct )
         getDoc(queryDb)
-        .then(resp => setProduct( { id: resp.id, ...resp.data() } ))
+        .then(resp => setProduct( { id: resp.id, ...resp.products() } ))
         .finally(() => setLoading(false))
     }, [idProduct])
 
     return (
         <div>
-            {/* loading
+             {loading
             ?
-                // <LoaderSecondary />
-            // : */}
-{                <ItemDetail product={product}/>}
-            
+                <LoaderSecondary />
+            :
+                <ItemDetail product={product}/>
+            }
         </div>
     )
 }

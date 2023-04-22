@@ -10,7 +10,7 @@ const Item = ({info}) => {
   
     return(
     <CardGroup>
-    <Link to={`/detail/${info.id}`} className="pack">
+
      <Card style={{ width: '18rem', display: 'flex', padding:'2px' }}>
           <img src={info.img} alt="" />
       <Card.Body>
@@ -19,11 +19,13 @@ const Item = ({info}) => {
         <h4 className='description'>{info.description}</h4>
         ${info.price}
         </Card.Text>
-        
+        <Link to={`/checkout`}>
+                        <button className="btn btn-danger bg-gradient">Comprar</button>
+                    </Link>
       
       </Card.Body>
     </Card>
-        </Link>
+       
        </CardGroup>
     )
 }

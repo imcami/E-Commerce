@@ -3,10 +3,9 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import CartWidget from '../cartWidget/CartWidget';
-import ItemCount from '../itemCount/ItemCount';
 
 
-const NavBar = ({ItemCount}) => {
+const NavBar = ({cartCounter}) => {
 	return (
         <>
             <Navbar bg="dark" variant="dark" expand="lg">
@@ -23,13 +22,13 @@ const NavBar = ({ItemCount}) => {
                                 Home
                             </NavLink>
                             <NavLink className="nav-link" to="/idCategory">
-                               Planes
+                               Packs
                             </NavLink>
                             
                         </Nav>
                     </Navbar.Collapse>
                     <Link className="cart-desktop" to="/cart">
-                        <CartWidget ItemCount={ItemCount} />
+                        <CartWidget cartCounter={cartCounter} />
                     </Link> 
                 </Container>
             </Navbar>
