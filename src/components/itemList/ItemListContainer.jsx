@@ -29,7 +29,10 @@ function ItemListContainer({greeting}) {
 
     return (
         <div>
-        <h2 className="text-center"> {greeting} </h2>
+            <h2 className="text-center">
+            {greeting}
+            </h2>
+        
         <div className="container">
             <div className="row">
                 { loading 
