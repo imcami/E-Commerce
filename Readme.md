@@ -5,11 +5,12 @@
 
 ## El proyecto consiste en un E-Commerce que ofrece programas de entrenamiento a distancia 
 
-<p> es una proyeccion hacia lo que luego sera un proyecto real y monetizable, mas complejo. De uso tanto personal como comunitario. </p>
+<p>Este proyecto es un e-commerce de planes para hacer ejercicio creado para el curso de React-js. El proyecto es parte de a la carrera de Desarrollador Full-Stack. Es una proyeccion hacia lo que luego sera un proyecto real y monetizable, mas complejo. De uso tanto personal como comunitario. </p>
  
  <br/> 
 
 <h2> Previsualizacion </h2>
+
 ![Previsualizacion](https://user-images.githubusercontent.com/112669005/233869118-1f608aff-c547-4ce3-9de7-c2a1f10dac97.gif)
 
 
