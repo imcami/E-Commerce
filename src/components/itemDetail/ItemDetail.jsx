@@ -1,17 +1,16 @@
 import React, {useState, useContext} from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from '../CartContext/CartContext';
+import { CartContext } from "../CartContext/CartContext";
 import ItemCount from '../itemCount/ItemCount';
 import './ItemDetail.css'
 function ItemDetail ({product}) {
     const [goCart, setGoCart] = useState(false)
     const { addToCart } = useContext(CartContext)
    
-    const onAdd = (quantity) =>{
-        setGoCart(true)
-        addToCart({...product, quantity:quantity})
-       
-    }
+    const onAdd = (quantity) => {
+        setGoCart(true);
+        addToCart({ ...product, quantity: quantity });
+      };
     return(
         <div key={product.id} className='container mt-5'>
            <div className="row justify-content-center text-center align-items-center">

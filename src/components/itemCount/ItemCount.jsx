@@ -24,7 +24,9 @@ const ItemCount = ({initial, stock, onAdd}) => {
       <span className="counter__number">{count}</span>
       <button disabled={count >= stock} className="counter__button" onClick={add}>+</button>
       <div>
-      <button disabled={ stock => 30} onClick={() => onAdd(count)} className='add' >Agregar al carrito</button>
+      <button disabled={count > stock} onClick={() => onAdd(count)} className='add'>
+      Agregar al carrito
+      </button>
       </div>
   </div>
     )
