@@ -9,6 +9,9 @@
  
  <br/> 
 
+<h2> Previsualizacion </h2>
+![Previsualizacion](https://user-images.githubusercontent.com/112669005/233869118-1f608aff-c547-4ce3-9de7-c2a1f10dac97.gif)
+
 
 ## Conocimientos aplicados
 
