@@ -12,9 +12,10 @@ const ItemCount = ({initial, stock, onAdd}) => {
     }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     setCount(parseInt(initial))
-  })
+  }, [initial])
+  
     return(
       //Indicamos que el boton + / - se desahabiliten y habiliten segun los parametros que le pasamos mediante disabled y onClick
       //El boton agregar al carrito se desabilita cuando llega al maximo de 30 porque le indicamos que el stock disponible es < o = a 30
@@ -23,7 +24,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
       <span className="counter__number">{count}</span>
       <button disabled={count >= stock} className="counter__button" onClick={add}>+</button>
       <div>
-          <button disabled={stock<=30} onClick={(()=> onAdd(count))} className='add' >Agregar al carrito</button>
+      <button disabled={stock => 30} onClick={() => onAdd(count)} className='add' >Agregar al carrito</button>
       </div>
   </div>
     )

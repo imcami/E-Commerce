@@ -24,7 +24,7 @@ function ItemDetail ({product}) {
                     <p>{product.description}</p>
          
            {
-              !goCart ?  <ItemCount stock={30} initial={1} addToCart={addToCart}/>
+              !goCart ?  <ItemCount stock={30} initial={1} onAdd={onAdd}/>
               : 
               <div className="d-flex justify-content-center">
                   <Link to={`/cart`}> 
