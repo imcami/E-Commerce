@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react'
-import { getFirestore, collection, writeBatch, addDoc, Timestamp, doc} from 'firebase/firestore'
+import {  collection, writeBatch, addDoc, Timestamp, doc} from 'firebase/firestore'
+import {db} from '../../firebase/Firebase'
 import { CartContext } from '../CartContext/CartContext'
 import { Link } from 'react-router-dom'
 import MainLoader from '../Loader/MainLoader'
@@ -9,7 +10,7 @@ const CheckOut = () => {
     const [orderId, setOrderId] = useState('')
     const [creatingOrder, setCreatingOrder] = useState(false)
     const [formData, setFormData] = useState({
-        name:"", email:"", emailConfirm:"", phone:""
+        title:"", email:"", emailConfirm:"", phone:""
     })
     const { cartList, totalBuy, emptyCart } = useContext(CartContext)
 
@@ -33,15 +34,15 @@ const CheckOut = () => {
         
         order.items = cartList.map(cartItem => {
             const id = cartItem.id
-            const name = cartItem.name
+            const title = cartItem.title
             const price = cartItem.price
             const quantity = cartItem.quantity
             const totalPrice = cartItem.price * cartItem.quantity
-            return {id, name, price, quantity, totalPrice}
+            return {id, title, price, quantity, totalPrice}
         })
 
 
-        const db = getFirestore()
+     
         const orderCollection = collection(db, 'orders')
         addDoc(orderCollection, order)
         .then(resp => setOrderId(resp.id))
