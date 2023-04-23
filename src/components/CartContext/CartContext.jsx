@@ -1,10 +1,18 @@
 import React, { createContext, useState } from 'react'
 
-export const CartContext = createContext([])
 
+export const CartContext = createContext({
+    cartList: [],
+    addToCart: () => {},
+    removeItem: () => {},
+    emptyCart: () => {},
+    cartCounter: () => 0,
+    totalBuy: () => 0,
+})
 
 const CartContextProvider = ({children}) => {
 
+    
     const [cartList, setCartList] = useState([])
 
     function addToCart(product){
@@ -23,38 +31,34 @@ const CartContextProvider = ({children}) => {
     const removeItem = (id) => {
         const filteredCart = cartList.filter((product) => product.id !== id)
         setCartList(filteredCart)
-    }
+      }    
+    
+    const emptyCart = () => {
+    setCartList([])
+  }
 
-
-    function emptyCart(){
-        setCartList([])
-    }
 
     // Contador carrito
     const cartCounter = () => {
-        return (
-            cartList.reduce((prev, prod) => (prev + prod.quantity), 0)
-        )
-    }
-    // Subtotal compra
-    const totalBuy = () => {
-        return ( 
-            cartList.reduce((prev, prod) => (prev + prod.quantity * prod.price), 0)
-        )
-    }
+        const sumQuantity = (accumulator, product) => accumulator + product.quantity
+        return cartList.reduce(sumQuantity, 0)
+      }
+    
+      const totalBuy = () => {
+        const sumPrice = (accumulator, product) => accumulator + product.quantity * product.price
+        return cartList.reduce(sumPrice, 0)
+      }
 
-    return (
-        <CartContext.Provider value={{
-            cartList,
-            addToCart,
-            removeItem,
-            emptyCart,
-            cartCounter,
-            totalBuy
-        }}>
-            {children}
-        </CartContext.Provider>
-    )
-}
+      const contextValue = {
+        cartList,
+        addToCart,
+        removeItem,
+        emptyCart,
+        cartCounter,
+        totalBuy,
+      }
+    
+      return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
+    }
 
 export default CartContextProvider;
