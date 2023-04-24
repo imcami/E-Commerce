@@ -37,12 +37,13 @@ Se aplicaron conocimientos para poder navegablilidad, originalidad y funcionalid
  </ul>
 
 <h2>Para acceder al proyecto 🚀 </h2>
-<p> Tenemos que abrir la consola ubicándonos en la carpeta en la que queremos que se clone el proyecto y seguir los pasos siguientes:</p>
+<p> Tenemos que abrir la consola ubicándonos en la carpeta en la que queremos que se clone el proyecto y seguir los pasos siguientes:
+ 
+ Escriba git clone y pegue la dirección URL que ha copiado antes.</p>
+ 
+ 1. `git clone: https://github.com/lonerocamila/E-Commerce.git  `
+ Presione **Entrar** para crear el clon local.
 
- 1. `git clone: https://github.com/lonerocamila/E-COMMERCE  `
- 2. ` cd E-COMMERCE `
- 3. ` npm i  `
- 4. ` npm start `
 
  <p>Si quisiéramos abrir el proyecto, antes de colocar npm start podemos escribir ``code `` para que nos lo abra en Visual Studio Code.</p>
 
