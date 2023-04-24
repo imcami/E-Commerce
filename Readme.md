@@ -39,8 +39,8 @@ Se aplicaron conocimientos para poder navegablilidad, originalidad y funcionalid
 <h2>Para acceder al proyecto 🚀 </h2>
 <p> Tenemos que abrir la consola ubicándonos en la carpeta en la que queremos que se clone el proyecto y seguir los pasos siguientes:</p>
 
- 1. `git clone: https://github.com/lonerocamila/E-COMMERCE-RAVE   `
- 2. ` cd E-COMMERCE `
+ 1. `git clone: https://github.com/lonerocamila/E-COMMERCE  `
+ 2. ` cd RAVE `
  3. ` npm i  `
  4. ` npm start `
 
